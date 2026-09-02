@@ -26,6 +26,9 @@ import {
   CircleHelp,
 } from "lucide-react";
 
+const API_BASE =
+  import.meta.env.VITE_API_BASE_URL || "http://localhost:3000";
+
 // ======================================================
 // CATEGORY STYLES
 // ======================================================
@@ -165,7 +168,7 @@ export default function Categories({
           setError("");
 
           const response =
-            fetch(`${API_BASE}/api/categories`)
+            await fetch(`${API_BASE}/api/categories`)
 
           if (
             !response.ok
