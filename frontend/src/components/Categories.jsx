@@ -165,9 +165,7 @@ export default function Categories({
           setError("");
 
           const response =
-            await fetch(
-              "http://localhost:3000/api/categories"
-            );
+            fetch(`${API_BASE}/api/categories`)
 
           if (
             !response.ok
