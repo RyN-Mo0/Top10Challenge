@@ -11,6 +11,7 @@ import {
   Play,
   RotateCcw,
 } from "lucide-react";
+import BrandLogo from "./BrandLogo";
 
 const API_BASE =
   import.meta.env.VITE_API_BASE_URL || "http://localhost:3000";
@@ -633,6 +634,8 @@ const resetTimer = () => {
         {/* TOP BAR */}
         <header className="flex shrink-0 items-center justify-between gap-3">
           <div className="flex items-center gap-3">
+            <BrandLogo size={40} showText={false} />
+
             <span className="inline-flex rounded-full bg-indigo-50 px-4 py-2 text-sm font-black text-indigo-600">
               {currentCategory.name}
             </span>
@@ -1052,26 +1055,7 @@ function CategoryResultScreen({
   <div className="relative mx-auto flex h-full max-w-[1550px] flex-col">
 
     <header className="flex h-24 shrink-0 items-center justify-between">
-      <div className="flex items-center gap-3">
-
-        <div className="relative flex h-14 w-14 items-center justify-center overflow-hidden rounded-[20px] bg-gradient-to-br from-indigo-600 via-violet-500 to-cyan-500 text-white shadow-xl shadow-indigo-200/60">
-          <span className="text-xl font-black tracking-tight">
-            10
-          </span>
-
-          <span className="absolute bottom-1.5 right-2 h-1.5 w-1.5 rounded-full bg-white/80" />
-        </div>
-
-        <div>
-          <p className="text-xl font-black text-slate-950">
-            تحدي العشرة الأوائل
-          </p>
-
-          <p className="text-xs font-bold text-slate-400">
-            Top 10 Challenge
-          </p>
-        </div>
-      </div>
+      <BrandLogo />
 
       <span className="rounded-full border border-slate-200 bg-white/80 px-5 py-2.5 text-sm font-bold text-slate-500 shadow-sm backdrop-blur">
         انتهت فئة {result.categoryName}
@@ -1256,15 +1240,11 @@ function FinalResultScreen({
 
       <div className="relative mx-auto flex h-full max-w-5xl flex-col">
         <header className="flex shrink-0 items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-600 to-cyan-500 font-black text-white shadow-lg shadow-indigo-100">
-              10
-            </div>
-
-            <span className="text-lg font-black text-slate-950">
-              تحدي العشرة الأوائل
-            </span>
-          </div>
+          <BrandLogo
+            size={44}
+            showSubtitle={false}
+            titleClassName="text-lg"
+          />
 
           <span className="rounded-full bg-emerald-50 px-4 py-2 text-sm font-black text-emerald-600">
             6 من 6 أسئلة
@@ -1391,25 +1371,11 @@ function CategoryPicker({
 
         {/* TOP BAR */}
         <header className="flex h-[76px] shrink-0 items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <div className="relative flex h-12 w-12 items-center justify-center overflow-hidden rounded-[18px] bg-gradient-to-br from-indigo-600 via-violet-500 to-cyan-500 text-white shadow-lg shadow-indigo-200/50">
-              <span className="text-lg font-black tracking-tight">
-                10
-              </span>
-
-              <span className="absolute bottom-1.5 right-2 h-1.5 w-1.5 rounded-full bg-white/80" />
-            </div>
-
-            <div>
-              <p className="text-lg font-black text-slate-950 sm:text-xl">
-                تحدي العشرة الأوائل
-              </p>
-
-              <p className="text-[11px] font-bold text-slate-400 sm:text-xs">
-                Top 10 Challenge
-              </p>
-            </div>
-          </div>
+          <BrandLogo
+            size={48}
+            titleClassName="text-lg sm:text-xl"
+            subtitleClassName="text-[11px] sm:text-xs"
+          />
 
           <button
             onClick={onExit}

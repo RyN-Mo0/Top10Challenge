@@ -25,6 +25,7 @@ import {
   CarFront,
   CircleHelp,
 } from "lucide-react";
+import BrandLogo from "./BrandLogo";
 
 const API_BASE =
   import.meta.env.VITE_API_BASE_URL || "http://localhost:3000";
@@ -341,29 +342,7 @@ export default function Categories({
 
         <header className="flex h-24 items-center justify-between">
 
-          <div className="flex items-center gap-3">
-
-            <div className="relative flex h-14 w-14 items-center justify-center overflow-hidden rounded-[20px] bg-gradient-to-br from-indigo-600 via-violet-500 to-cyan-500 text-white shadow-xl shadow-indigo-200/60">
-
-              <span className="text-xl font-black tracking-tight">
-                10
-              </span>
-
-              <span className="absolute bottom-1.5 right-2 h-1.5 w-1.5 rounded-full bg-white/80" />
-
-            </div>
-
-            <div>
-              <p className="text-xl font-black text-slate-950">
-                تحدي العشرة الأوائل
-              </p>
-
-              <p className="text-xs font-bold text-slate-400">
-                Top 10 Challenge
-              </p>
-            </div>
-
-          </div>
+          <BrandLogo />
 
           <button
             onClick={

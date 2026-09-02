@@ -4,14 +4,13 @@ import {
   ArrowLeft,
   Clock3,
   Gamepad2,
-  HelpCircle,
   Layers3,
-  Sparkles,
   Trophy,
   Users,
   X,
   Zap,
 } from "lucide-react";
+import BrandLogo from "./BrandLogo";
 
 const steps = [
   {
@@ -46,20 +45,10 @@ export default function Hero({ onStart }) {
         <div className="absolute -left-28 top-[28%] h-[430px] w-[430px] rounded-full bg-cyan-200/45 blur-[95px]" />
         <div className="absolute left-[42%] top-[58%] h-[340px] w-[340px] rounded-full bg-violet-200/30 blur-[90px]" />
       </div>
-      
+
       <div className="relative mx-auto flex min-h-[100dvh] max-w-7xl flex-col">
         <header className="flex h-24 shrink-0 items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="relative flex h-14 w-14 items-center justify-center overflow-hidden rounded-[20px] bg-gradient-to-br from-indigo-600 via-violet-500 to-cyan-500 text-white shadow-xl shadow-indigo-200/60">
-              <span className="text-xl font-black tracking-tight">10</span>
-              <span className="absolute bottom-1.5 right-2 h-1.5 w-1.5 rounded-full bg-white/80" />
-            </div>
-
-            <div>
-              <p className="text-xl font-black text-slate-950">تحدي العشرة الأوائل</p>
-              <p className="text-xs font-bold text-slate-400">Top 10 Challenge</p>
-            </div>
-          </div>
+          <BrandLogo />
 
           <div className="flex items-center gap-2">
             <button
@@ -69,9 +58,7 @@ export default function Hero({ onStart }) {
               طريقة اللعب
             </button>
 
-            <button
-              className="rounded-full bg-indigo-50 px-5 py-3 text-sm font-black text-indigo-600"
-            >
+            <button className="rounded-full bg-indigo-50 px-5 py-3 text-sm font-black text-indigo-600">
               الرئيسية
             </button>
           </div>
@@ -79,18 +66,23 @@ export default function Hero({ onStart }) {
 
         <div className="flex flex-1 flex-col items-center justify-center pb-16 text-center">
           <div className="relative">
-            <div className="pointer-events-none absolute left-1/2 top-1/2 -z-0 -translate-x-1/2 -translate-y-1/2 text-[330px] font-black leading-none text-indigo-500/[0.045] sm:text-[430px]">10</div>
+            <div className="pointer-events-none absolute left-1/2 top-1/2 -z-0 -translate-x-1/2 -translate-y-1/2 text-[330px] font-black leading-none text-indigo-500/[0.045] sm:text-[430px]">
+              10
+            </div>
 
-            <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} className="relative z-10">
-
-
+            <motion.div
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="relative z-10"
+            >
               <h1 className="mx-auto mt-8 max-w-5xl text-5xl font-black leading-[1.12] tracking-tight text-slate-950 sm:text-6xl lg:text-8xl">
                 <span className="text-orange-400">تحدي</span>{" "}
                 <span>العشرة الأوائل</span>
               </h1>
 
               <p className="mx-auto mt-6 max-w-3xl text-lg leading-9 text-slate-500 sm:text-xl">
-                اكتشف أشهر 10 إجابات، تنافس مع أصدقائك، واجمع أكبر عدد من النقاط في تجربة جماعية سريعة ومليئة بالحماس.
+                اكتشف أشهر 10 إجابات، تنافس مع أصدقائك، واجمع أكبر عدد من
+                النقاط في تجربة جماعية سريعة ومليئة بالحماس.
               </p>
 
               <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
@@ -99,14 +91,31 @@ export default function Hero({ onStart }) {
                   className="group inline-flex items-center gap-3 rounded-full bg-gradient-to-l from-indigo-600 to-cyan-500 px-10 py-4 text-lg font-black text-white shadow-xl shadow-indigo-200/70 transition hover:-translate-y-1"
                 >
                   ابدأ التحدي الآن
-                  <ArrowLeft size={20} className="transition-transform group-hover:-translate-x-1" />
+                  <ArrowLeft
+                    size={20}
+                    className="transition-transform group-hover:-translate-x-1"
+                  />
                 </button>
               </div>
 
               <div className="mx-auto mt-10 grid max-w-3xl grid-cols-1 gap-3 sm:grid-cols-3">
-                <Feature icon={Users} title="فريق ضد فريق" subtitle="منافسة جماعية" tone="indigo" />
-                <Feature icon={Gamepad2} title="3 فئات 6 تحديات" subtitle="اسئلة متنوعة" tone="violet" />
-                <Feature icon={Clock3} title="ابدأ خلال أقل من دقيقة" tone="cyan" />
+                <Feature
+                  icon={Users}
+                  title="فريق ضد فريق"
+                  subtitle="منافسة جماعية"
+                  tone="indigo"
+                />
+                <Feature
+                  icon={Gamepad2}
+                  title="3 فئات 6 تحديات"
+                  subtitle="اسئلة متنوعة"
+                  tone="violet"
+                />
+                <Feature
+                  icon={Clock3}
+                  title="ابدأ خلال أقل من دقيقة"
+                  tone="cyan"
+                />
               </div>
             </motion.div>
           </div>
@@ -129,7 +138,10 @@ export default function Hero({ onStart }) {
               onMouseDown={(e) => e.stopPropagation()}
               className="relative max-h-[90dvh] w-full max-w-4xl overflow-y-auto rounded-[34px] bg-white p-6 shadow-2xl sm:p-9"
             >
-              <button onClick={() => setShowHowToPlay(false)} className="absolute left-5 top-5 flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-slate-500">
+              <button
+                onClick={() => setShowHowToPlay(false)}
+                className="absolute left-5 top-5 flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-slate-500"
+              >
                 <X size={20} />
               </button>
 
@@ -139,27 +151,43 @@ export default function Hero({ onStart }) {
                   طريقة اللعب
                 </div>
 
-                <h2 className="mt-5 text-3xl font-black text-slate-950 sm:text-4xl">كيف تلعب تحدي العشرة الأوائل؟</h2>
+                <h2 className="mt-5 text-3xl font-black text-slate-950 sm:text-4xl">
+                  كيف تلعب تحدي العشرة الأوائل؟
+                </h2>
+
                 <p className="mx-auto mt-3 max-w-2xl leading-7 text-slate-500">
-                  مباراة قصيرة بين فريقين، تتكون من ثلاث فئات وستة تحديات. الهدف هو جمع أكبر عدد من النقاط والفوز ببونصات الفئات.
+                  مباراة قصيرة بين فريقين، تتكون من ثلاث فئات وستة تحديات.
+                  الهدف هو جمع أكبر عدد من النقاط والفوز ببونصات الفئات.
                 </p>
               </div>
 
               <div className="mt-8 grid gap-4 md:grid-cols-2">
                 {steps.map((step, index) => {
                   const Icon = step.icon;
+
                   return (
-                    <div key={step.title} className="rounded-[26px] border border-slate-200 bg-slate-50/60 p-5">
+                    <div
+                      key={step.title}
+                      className="rounded-[26px] border border-slate-200 bg-slate-50/60 p-5"
+                    >
                       <div className="flex items-start gap-4">
                         <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-white text-indigo-600 shadow-sm">
                           <Icon size={22} />
                         </div>
+
                         <div>
                           <div className="flex items-center gap-2">
-                            <span className="text-xs font-black text-indigo-500">0{index + 1}</span>
-                            <h3 className="font-black text-slate-900">{step.title}</h3>
+                            <span className="text-xs font-black text-indigo-500">
+                              0{index + 1}
+                            </span>
+                            <h3 className="font-black text-slate-900">
+                              {step.title}
+                            </h3>
                           </div>
-                          <p className="mt-2 text-sm leading-7 text-slate-500">{step.text}</p>
+
+                          <p className="mt-2 text-sm leading-7 text-slate-500">
+                            {step.text}
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -168,9 +196,15 @@ export default function Hero({ onStart }) {
               </div>
 
               <div className="mt-5 rounded-[26px] border border-amber-100 bg-amber-50/70 p-5">
-                <h3 className="font-black text-amber-700">كيف تُحسب النقاط؟</h3>
+                <h3 className="font-black text-amber-700">
+                  كيف تُحسب النقاط؟
+                </h3>
+
                 <p className="mt-2 text-sm leading-7 text-amber-700/80">
-                  كل إجابة صحيحة تمنح نقاطًا حسب ترتيبها في قائمة Top 10. بعد انتهاء السؤالين في الفئة، الفريق الأعلى نقاطًا في الفئة يحصل على +10 نقاط بونص. في نهاية الفئات الثلاث يفوز صاحب أعلى مجموع عام.
+                  كل إجابة صحيحة تمنح نقاطًا حسب ترتيبها في قائمة Top 10. بعد
+                  انتهاء السؤالين في الفئة، الفريق الأعلى نقاطًا في الفئة يحصل
+                  على +10 نقاط بونص. في نهاية الفئات الثلاث يفوز صاحب أعلى
+                  مجموع عام.
                 </p>
               </div>
 
@@ -190,8 +224,10 @@ export default function Hero({ onStart }) {
 
 function Feature({ icon: Icon, title, subtitle, tone }) {
   const styles = {
-    indigo: "from-indigo-50/90 to-white/80 text-indigo-600 border-indigo-100",
-    violet: "from-violet-50/90 to-white/80 text-violet-600 border-violet-100",
+    indigo:
+      "from-indigo-50/90 to-white/80 text-indigo-600 border-indigo-100",
+    violet:
+      "from-violet-50/90 to-white/80 text-violet-600 border-violet-100",
     cyan: "from-cyan-50/90 to-white/80 text-cyan-600 border-cyan-100",
   };
 

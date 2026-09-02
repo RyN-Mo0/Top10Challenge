@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowLeft, Flag, Swords, X } from "lucide-react";
+import { ArrowLeft, Flag, X } from "lucide-react";
+import BrandLogo from "./BrandLogo";
 
 export default function GameSetupModal({
   categories,
@@ -66,13 +67,11 @@ export default function GameSetupModal({
         onMouseDown={(event) => event.stopPropagation()}
         className="relative max-h-[calc(100dvh-32px)] w-full max-w-[680px] overflow-y-auto rounded-[32px] border border-white/80 bg-white shadow-[0_30px_90px_rgba(15,23,42,0.24)]"
       >
-        {/* Background details */}
         <div className="pointer-events-none absolute inset-0 overflow-hidden rounded-[32px]">
           <div className="absolute -right-20 -top-24 h-56 w-56 rounded-full bg-orange-100/45 blur-3xl" />
           <div className="absolute -bottom-24 -left-20 h-60 w-60 rounded-full bg-sky-100/55 blur-3xl" />
         </div>
 
-        {/* Close */}
         <button
           type="button"
           onClick={onClose}
@@ -83,11 +82,12 @@ export default function GameSetupModal({
         </button>
 
         <div className="relative z-10 p-5 sm:p-6">
-          {/* Header */}
           <div className="text-center">
-            <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-600 via-violet-500 to-cyan-500 text-white shadow-lg shadow-indigo-200/50">
-              <Swords size={22} strokeWidth={2.5} />
-            </div>
+            <BrandLogo
+              size={54}
+              showText={false}
+              className="justify-center"
+            />
 
             <div className="mx-auto mt-3 flex w-fit max-w-[90%] flex-wrap items-center justify-center gap-1.5 rounded-full border border-slate-200 bg-slate-50 px-3.5 py-1.5 text-[11px] font-black text-slate-500 sm:text-xs">
               {categories.map((category, index) => (
@@ -110,7 +110,6 @@ export default function GameSetupModal({
           </div>
 
           <form onSubmit={submit} className="mt-5">
-            {/* Team 1 */}
             <div className="rounded-[22px] border border-orange-100 bg-orange-50/40 p-4">
               <div className="flex items-center justify-between gap-4">
                 <div>
@@ -140,7 +139,6 @@ export default function GameSetupModal({
               />
             </div>
 
-            {/* VS */}
             <div className="relative my-3 flex items-center justify-center">
               <div className="absolute inset-x-0 h-px bg-slate-100" />
               <span className="relative rounded-full border border-slate-200 bg-white px-3 py-1 text-[11px] font-black text-slate-400 shadow-sm">
@@ -148,7 +146,6 @@ export default function GameSetupModal({
               </span>
             </div>
 
-            {/* Team 2 */}
             <div className="rounded-[22px] border border-sky-100 bg-sky-50/40 p-4">
               <div className="flex items-center justify-between gap-4">
                 <div>
